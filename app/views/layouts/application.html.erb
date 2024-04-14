@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XYZ Books App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <%= favicon_link_tag asset_path('sample logo.svg') %>
+    <style>
+      html, body {
+        overflow-x: hidden;
+      }  
+    </style>
+  </head>
+
+  <body>
+    <div style="position: relative; display: inline-block;">
+      <div class="md:flex flex-row top-1/2 left-1/2 absolute text-white text-lg font-medium py-2.5 px-4 text-center items-center hidden" style="transform: translate(-50%, -50%);">
+        <%= image_tag("26.svg", class: "h-10 w-10 mr-4", style: "-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); filter: FlipH; -ms-filter: 'FlipH';") %> 
+        Save up to $500 per year on millions of book titles! 
+        <%= image_tag("26.svg", class: "h-10 w-10 ml-4") %>
+      </div>
+      <%= image_tag("Mask Group 4.png", alt: "banner", style: "display: block; width: 100%; height: auto;") %>
+    </div>
+
+    <div class="flex flex-row w-full justify-between px-4 md:px-16 py-4">
+      <%= image_tag("sample logo.svg", alt: "logo", class: "w-1/5 md:w-1/12") %>
+
+      <%= form_with url: books_search_path, method: :get do |form| %>
+        <%= form.text_field "isbn", placeholder: "Search", style: "border-radius: 9999px; border-color: #535CEF;" %>
+      <% end %>
+
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+
+      <div class="hidden w-full md:flex md:flex-row md:w-6/12 items-center justify-between" id="navbar-default">
+        <%= link_to "Home", root_path, class: "text-navy-blue text-lg font-bold" %>
+        <span class="text-navy-blue text-lg font-bold">Rent Textbooks</span>
+        <span class="text-navy-blue text-lg font-bold">Buy Textbooks</span>
+        <span class="text-navy-blue text-lg font-bold">Sell Textbooks</span>
+
+        <div class="flex flex-row items-center">
+          <%= image_tag("Icon feather-globe.svg", class: "h-6 w-6 mr-4") %> <span class="text-navy-blue font-medium mr-4">En</span>
+          <button class="bg-purple px-5 py-3 text-white font-medium text-center rounded-lg">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <% if current_page?(root_path) %>
+      <div class="hidden md:flex flex-row-reverse px-16">
+        <%= image_tag("XMLID_2331_.svg", class: "h-10 w-10 mr-[5%]") %>
+        <span style="transform: rotate(-5deg) skew(-5deg); font-family: cursive;" class="text-light-blue text-lg font-medium mr-4">Inquire us now to <br> avail discounts!</span>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <section class="md:p-16">
+      <div class="mx-[10%] md:mx-0 flex flex-col md:flex-row w-full justify-between py-20">
+          <div class="flex flex-col md:w-2/6 md:pr-10 md:mr-[5%] justify-between mb-8 md:mb-0">
+              <%= image_tag("sample logo.svg", alt: "logo", class: "w-1/3 mb-8") %>
+              <p class="text-navy-blue text-lg font-semibold mb-10">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod </p>
+              <input type="text" placeholder="Email Address" 
+                  style="width: 85%; background: url(images/Path 9712.svg) right no-repeat padding-right: 17px; 
+                  border-radius: 9999px; border-color: #535CEF">
+          </div>
+
+          <div class="flex flex-col mb-8 md:mb-0 md:w-1/6 md:mr-[5%]">
+              <p class="text-navy-blue text-2xl font-extrabold mb-4">Menu</p>
+              <ul class="list-none">
+                  <li class="text-dark-gray text-lg font-medium mb-4">Shop All</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">About Us</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Community</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">FAQs</li>
+              </ul>
+          </div>
+
+          <div class="flex flex-col mb-8 md:mb-0 md:w-1/6 md:mr-[5%]">
+              <p class="text-navy-blue text-2xl font-extrabold mb-4">Support</p>
+              <ul class="list-none">
+                  <li class="text-dark-gray text-lg font-medium mb-4">Shipping & Returns</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Help & FAQ</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Terms & Conditions</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Privacy Policy</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Contact</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Login</li>
+              </ul>
+          </div>
+
+          <div class="flex flex-col mb-8 md:mb-0 md:w-1/6 mb:mr-[5%]">
+              <p class="text-navy-blue text-2xl font-extrabold mb-4">Resources</p>
+              <ul class="list-none">
+                  <li class="text-dark-gray text-lg font-medium mb-4">Shipping & Returns</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Help & FAQ</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Terms & Conditions</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Privacy Policy</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Contact</li>
+                  <li class="text-dark-gray text-lg font-medium mb-4">Login</li>
+              </ul>
+          </div>
+
+          <div class="ml-[25%] md:ml-0 flex flex-col md:w-1/6  md:relative md:mb-[5%]">
+            <div class="md:absolute bottom-0 flex flex-row bg-light-blue w-[120px] h-[120px] items-center" style="border-radius: 50%;">
+              <%= image_tag("Path 335.svg", class: "h-14 w-14 ml-8") %>
+            </div>
+          </div>
+      </div>
+
+      <div class="mx-[10%] md:mx-0 flex flex-col md:flex-row w-full justify-between">
+        <div class="flex flex-row items-center">
+          <%= image_tag("copyright.svg", class: "h-6 w-6 mr-2") %> 
+          <span class="text-navy-blue text-lg font-bold">2022 Brainly</span>
+        </div>
+
+        <div class="flex flex-row md:w-1/6 md:justify-between">
+          <div class="mr-4 md:mr-0 flex flex-row bg-light-purple w-[60px] h-[60px] items-center" style="border-radius: 50%;">
+            <%= image_tag("facebook (3).svg", class: "h-6 w-6 ml-5") %>
+          </div>
+
+          <div class="mr-4 md:mr-0  flex flex-row bg-light-purple w-[60px] h-[60px] items-center" style="border-radius: 50%;">
+            <%= image_tag("linkedin (1).svg", class: "h-6 w-6 ml-5") %>
+          </div>
+
+          <div class="mr-4 md:mr-0  flex flex-row bg-light-purple w-[60px] h-[60px] items-center" style="border-radius: 50%;">
+            <%= image_tag("Logo_00000038394049246713568260000012923108920998390947_.svg", class: "h-6 w-6 ml-5") %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
