@@ -13,6 +13,7 @@ test:
 
 production:
   <<: *default
-  database: xyz-books-production
-  username: myapp
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>
+  database: xyzbooks
+  username: msongco
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
