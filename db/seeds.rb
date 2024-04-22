@@ -75,3 +75,66 @@ if Book.count == 0
   end
 end
 puts "\n -- books created -- \n"
+
+
+puts "\n -- attaching image to book -- \n"
+american_elf = Book.find_by_title("American Elf")
+if american_elf
+  if !american_elf.image.attached?
+    american_elf.image.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'american-elf.jpeg')),
+      filename: 'american-elf.jpeg',
+      content_type: 'image/jpeg',
+      service_name: 'local'
+    )
+  end
+end
+
+cosmoknights = Book.find_by_title("Cosmoknights")
+if cosmoknights
+  if !cosmoknights.image.attached?
+    cosmoknights.image.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'cosmoknights.jpg')),
+      filename: 'american-elf.jpeg',
+      content_type: 'image/jpeg',
+      service_name: 'local'
+    )
+  end
+end
+
+essex_county = Book.find_by_title("Essex County")
+if essex_county
+  if !essex_county.image.attached?
+    essex_county.image.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'essexcounty.jpeg')),
+      filename: 'essexcounty.jpeg',
+      content_type: 'image/jpeg',
+      service_name: 'local'
+    )
+  end
+end
+
+hey_mister = Book.find_by_title("Hey, Mister (Vol 1)")
+if hey_mister
+  if !hey_mister.image.attached?
+    essex_county.image.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'heymister.jpeg')),
+      filename: 'heymister.jpeg',
+      content_type: 'image/jpeg',
+      service_name: 'local'
+    )
+  end
+end
+
+underwater = Book.find_by_title("The Underwater Welder")
+if underwater
+  if !underwater.image.attached?
+    underwater.image.attach(
+      io: File.open(Rails.root.join('app', 'assets', 'images', 'The Underwater Welder.png')),
+      filename: 'theunderwaterwelder.jpeg',
+      content_type: 'image/png',
+      service_name: 'local'
+    )
+  end
+end
+puts "\n -- images attached -- \n"
