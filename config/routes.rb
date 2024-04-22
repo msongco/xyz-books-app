@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   get 'books/search', to: 'books#search'
+  resources :books, only: [:index]
 
   # API Endpoints
   namespace :api do

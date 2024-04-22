@@ -3,6 +3,10 @@ require 'pry'
 class BooksController < ApplicationController
   include ActiveStorage::SetCurrent
 
+  def index
+    @books = Book.all.order(id: :asc)
+  end
+
   def search
     if !params[:isbn].blank?
       clean_isbn = params[:isbn].gsub("-","")

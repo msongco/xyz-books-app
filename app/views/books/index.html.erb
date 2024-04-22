@@ -1,0 +1,28 @@
+
+<div class="p-16">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-base text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-4 py-2">Title</th>
+                <th scope="col" class="px-4 py-2">Author/s</th>
+                <th scope="col" class="px-4 py-2">List Price</th>
+                <th scope="col" class="px-4 py-2">Publication Date</th>
+                <th scope="col" class="px-4 py-2">Publisher</th>
+                <th scope="col" class="px-4 py-2">Edition</th>
+            </tr>
+        </thead> 
+
+        <tbody>
+            <% @books.each do |book| %>
+                <tr class="border-b">
+                    <td scope="row" class="px-4 py-2"><%= book.title %></td>
+                    <td scope="row" class="px-4 py-2"><%= book.all_authors %></td>
+                    <td scope="row" class="px-4 py-2"><%= book.list_price %></td>
+                    <td scope="row" class="px-4 py-2"><%= book.publication_year %></td>
+                    <td scope="row" class="px-4 py-2"><%= book.publisher.name %></td>
+                    <td scope="row" class="px-4 py-2"><%= book.edition %></td>
+                </tr>
+            <% end %>
+        </tbody>   
+    </table>
+</div>
