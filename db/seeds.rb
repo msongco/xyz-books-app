@@ -85,7 +85,7 @@ if american_elf
       io: File.open(Rails.root.join('app', 'assets', 'images', 'american-elf.jpeg')),
       filename: 'american-elf.jpeg',
       content_type: 'image/jpeg',
-      service_name: 'local'
+      service_name: 'amazon'
     )
   end
 end
@@ -97,7 +97,7 @@ if cosmoknights
       io: File.open(Rails.root.join('app', 'assets', 'images', 'cosmoknights.jpg')),
       filename: 'cosmoknights.jpg',
       content_type: 'image/jpeg',
-      service_name: 'local'
+      service_name: 'amazon'
     )
   end
 end
@@ -109,7 +109,7 @@ if essex_county
       io: File.open(Rails.root.join('app', 'assets', 'images', 'essexcounty.jpeg')),
       filename: 'essexcounty.jpeg',
       content_type: 'image/jpeg',
-      service_name: 'local'
+      service_name: 'amazon'
     )
   end
 end
@@ -117,11 +117,11 @@ end
 hey_mister = Book.find_by_title("Hey, Mister (Vol 1)")
 if hey_mister
   if !hey_mister.image.attached?
-    essex_county.image.attach(
+    hey_mister.image.attach(
       io: File.open(Rails.root.join('app', 'assets', 'images', 'heymister.jpeg')),
       filename: 'heymister.jpeg',
       content_type: 'image/jpeg',
-      service_name: 'local'
+      service_name: 'amazon'
     )
   end
 end
@@ -133,7 +133,7 @@ if underwater
       io: File.open(Rails.root.join('app', 'assets', 'images', 'The Underwater Welder.png')),
       filename: 'The Underwater Welder.png',
       content_type: 'image/png',
-      service_name: 'local'
+      service_name: 'amazon'
     )
   end
 end
