@@ -95,7 +95,7 @@ if cosmoknights
   if !cosmoknights.image.attached?
     cosmoknights.image.attach(
       io: File.open(Rails.root.join('app', 'assets', 'images', 'cosmoknights.jpg')),
-      filename: 'american-elf.jpeg',
+      filename: 'cosmoknights.jpg',
       content_type: 'image/jpeg',
       service_name: 'local'
     )
@@ -131,7 +131,7 @@ if underwater
   if !underwater.image.attached?
     underwater.image.attach(
       io: File.open(Rails.root.join('app', 'assets', 'images', 'The Underwater Welder.png')),
-      filename: 'theunderwaterwelder.jpeg',
+      filename: 'The Underwater Welder.png',
       content_type: 'image/png',
       service_name: 'local'
     )
