@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_04_14_081421) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,8 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_14_081421) do
   end
 
   create_table "authors_books", id: false, force: :cascade do |t|
-    t.integer "author_id", null: false
-    t.integer "book_id", null: false
+    t.bigint "author_id", null: false
+    t.bigint "book_id", null: false
     t.index ["author_id", "book_id"], name: "index_authors_books_on_author_id_and_book_id"
     t.index ["book_id", "author_id"], name: "index_authors_books_on_book_id_and_author_id"
   end
