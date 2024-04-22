@@ -55,7 +55,7 @@ rbenv install 3.2.2
 3. Setup the database then initialize data
    ```
    rake db:setup
-   rake db:seeds
+   rake db:seed
    ```
 4. Migrate the table for active storage attachments & blobs
    ```
