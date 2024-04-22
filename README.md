@@ -19,7 +19,7 @@ XYZ Books App is an application wherein you can search for books using it's Inte
 | /books/search?isbn=:isbn_13 | search for a book using its ISBN-13 |
 | /books/search?isbn=:isbn_10 | search for a book using its ISBN-10 |
 
-* Working feature - Can search for a book using its ISBN-13 or ISBN-10
+**Seach a book using its ISBN-13 or ISBN-10 on the search bar that's located on the navigation bar**
 
 
 ## Available books in the Database
